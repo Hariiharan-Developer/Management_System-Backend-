@@ -1,27 +1,29 @@
-const getGoals = (req,res)=>{
+const asyncHandler = require('express-async-handler')
+
+const getGoals =  asyncHandler (async (req,res)=>{
     console.log(req.body)
 res.status(200).json({message: 'Get Goals from Controller'})
-}
+})
 
 
-const setGoals = (req,res)=>{
+const setGoals = asyncHandler (async  (req,res)=>{
     if(!req.body){
         res.status(400)
         throw new Error('Please enter text field')
     }
      console.log(req.body)
 res.status(200).json({message: 'set Goals from Controller'})
-}
+})
 
 
-const putGoals = (req,res)=>{
+const putGoals =  asyncHandler (async (req,res)=>{
 res.status(200).json({message: 'put Goals from Controller'})
-}
+})
 
 
-const deleteGoals = (req,res)=>{
+const deleteGoals = asyncHandler (async  (req,res)=>{
 res.status(200).json({message: 'delete Goals from Controller'})
-}
+})
 
 module.exports ={
     getGoals,
