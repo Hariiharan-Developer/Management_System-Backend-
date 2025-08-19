@@ -13,6 +13,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use('/api/goals',require('./routes/goal.route'))
 app.use(errorHandler)
+app.use('/api/user' , require('./routes/user.route.js'))
 
 app.listen(port,()=>{
     console.log(`server listening on the port: http://localhost:${port} `.green.bold)
